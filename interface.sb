@@ -1,0 +1,16 @@
+If Buttons.Current = "U" Then
+  CIMA()
+  Buttons.Flush()
+ElseIf Buttons.Current = "D" then
+  BAIXO()
+  Buttons.Flush()
+Elseif Buttons.Current = "R" then
+  DIREITA()
+  Buttons.Flush()
+elseif Buttons.Current = "L" then
+  ESQUERDA()
+  Buttons.Flush()
+EndIf
+
+Sub CIMA
+  
