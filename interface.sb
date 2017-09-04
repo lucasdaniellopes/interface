@@ -1,16 +1,27 @@
-If Buttons.Current = "U" Then
-  CIMA()
-  Buttons.Flush()
-ElseIf Buttons.Current = "D" then
-  BAIXO()
-  Buttons.Flush()
-Elseif Buttons.Current = "R" then
-  DIREITA()
-  Buttons.Flush()
-elseif Buttons.Current = "L" then
-  ESQUERDA()
-  Buttons.Flush()
-EndIf
+LCD.Clear()
+LCD.Write(15, 55, "Pressione outros botões")
+LCD.Write(40, 70, "Se não, volte")
 
-Sub CIMA
+While "true"
+  Program.Delay(200) 'verifique cinco vezes por segundo se um bortão foi pressionado
   
+  clique = Buttons.GetClicks() 'a variavel contém a letra correspondente a qual botão foi pressionado desde a última vez que foi verificado
+  If clique <>"" Then 'se um botão tiver sido pressionado, então limpe a tela
+    LCD.Clear()
+  EndIf
+  If Text.IsSubText(clique, "U") Then 'se a sequência de caracteres em clique contiver um "U"
+    
+  ElseIf Text.IsSubText(clique, "D") then
+    
+  elseif Text.IsSubText(clique, "R") then
+    
+  elseif Text.IsSubText(clique, "L") then
+    
+  elseif Text.IsSubText(clique, "E") then
+    EndWhile
+
+Arquivo = EV3File.OpenWrite("")'abre o arquijo cujo será sobreposto o texto
+
+EV3File.WriteLine()
+
+EV3File.Close(Arquivo)
