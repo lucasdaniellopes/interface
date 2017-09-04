@@ -1,16 +1,39 @@
-If Buttons.Current = "U" Then
-  CIMA()
-  Buttons.Flush()
-ElseIf Buttons.Current = "D" then
-  BAIXO()
-  Buttons.Flush()
+While "true"
+If Buttons.Current = "U" Then 'se o botão pressionado for "U" então use a sub CIMA
+CIMA()
+Buttons.Flush()
+ElseIf Buttons.Current = "D" then' "..."
+BAIXO()
+Buttons.Flush()
 Elseif Buttons.Current = "R" then
-  DIREITA()
-  Buttons.Flush()
+DIREITA()
+Buttons.Flush()
 elseif Buttons.Current = "L" then
-  ESQUERDA()
-  Buttons.Flush()
+ESQUERDA()
+Buttons.Flush()
+elseif Buttons.Current = "E" then
+ENTER()
+Buttons.Flush()
 EndIf
 
 Sub CIMA
-  
+EndSub
+
+Sub BAIXO
+EndSub
+
+Sub DIREITA
+EndSub
+
+Sub ESQUERDA
+EndSub
+
+Sub ENTER
+EndSub
+endwhile
+
+Arquivo = EV3File.OpenWrite("")'abre o arquijo cujo será sobreposto o texto
+
+EV3File.WriteLine()
+
+EV3File.Close(Arquivo)
