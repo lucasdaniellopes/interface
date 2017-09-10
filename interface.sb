@@ -1,6 +1,25 @@
+ParametroNome[0] = "ForcaPadrao"
+ParametroValor[0] = 40
+Sub TELA
+  LCD.StopUpdate()
+  LCD.Clear()
+  LCD.Update() 
+EndSub
+Thread.Run = TELA
+
+ParametroNome[1] = "TamanhoDoRobo"
+ParametroValor[1] = 30
+ParametroNome[2] = "Padrao"
+ParametroValor[2] = 45
+
+
 LCD.Clear()
 LCD.Write(15, 55, "Pressione outros botões")
 LCD.Write(40, 70, "Se não, volte")
+i = 0
+
+LCD.Write(10, 10, ParametroNome[i])
+LCD.Write(10, 20, ParametroValor[i])
 
 While "true"
   Program.Delay(200) 'verifique cinco vezes por segundo se um bortão foi pressionado
