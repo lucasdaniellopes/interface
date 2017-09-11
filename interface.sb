@@ -1,3 +1,9 @@
+Handle = EV3File.OpenRead("obr.config")
+i = 0
+While "True"
+  Parametros[i] = EV3File.ReadLine(Handle)
+  i = i + 1
+EndWhile
 ParametroNome[0] = "ForcaPadrao"
 ParametroValor[0] = 40
 ParametroNome[1] = "TamanhoDoRobo"
@@ -21,25 +27,27 @@ LCD.Write(10, 10, ParametroNome[i])
 LCD.Write(10, 20, ParametroValor[i])
 
 While "true"
-  Program.Delay(200) 'verifique cinco vezes por segundo se um bortão foi pressionado
+  Program.Delay(200) 'verifique cinco vezes por segundo se um botão foi pressionado
   
   clique = Buttons.GetClicks() 'a variavel contém a letra correspondente a qual botão foi pressionado desde a última vez que foi verificado
   If clique <>"" Then 'se um botão tiver sido pressionado, então limpe a tela
     LCD.Clear()
   EndIf
   If Text.IsSubText(clique, "U") Then 'se a sequência de caracteres em clique contiver um "U"
-    
+    i = i + 1
   ElseIf Text.IsSubText(clique, "D") then
-    
+    i = i - 1
   elseif Text.IsSubText(clique, "R") then
-    
+    ParametroValor[i] = ParametroValor[i] + 1
   elseif Text.IsSubText(clique, "L") then
-    
+    ParametroValor[i] = ParametroValor[i] - 1
   elseif Text.IsSubText(clique, "E") then
+    Arquivo = EV3File.OpenWrite("")'abre o arquivo cujo será sobreposto o texto
+    
+    EV3File.WriteLine()
+    
+    EV3File.Close(Arquivo)
     EndWhile
-
-Arquivo = EV3File.OpenWrite("")'abre o arquijo cujo será sobreposto o texto
-
-EV3File.WriteLine()
-
-EV3File.Close(Arquivo)
+    
+    
+    
