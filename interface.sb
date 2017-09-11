@@ -1,17 +1,16 @@
 ParametroNome[0] = "ForcaPadrao"
 ParametroValor[0] = 40
+ParametroNome[1] = "TamanhoDoRobo"
+ParametroValor[1] = 30
+ParametroNome[2] = "Padrao"
+ParametroValor[2] = 45
+
 Sub TELA
   LCD.StopUpdate()
   LCD.Clear()
   LCD.Update() 
 EndSub
 Thread.Run = TELA
-
-ParametroNome[1] = "TamanhoDoRobo"
-ParametroValor[1] = 30
-ParametroNome[2] = "Padrao"
-ParametroValor[2] = 45
-
 
 LCD.Clear()
 LCD.Write(15, 55, "Pressione outros botões")
