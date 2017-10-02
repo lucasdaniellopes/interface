@@ -1,4 +1,4 @@
-Handle = EV3File.OpenRead("obr.config")
+hhhhHandle = EV3File.OpenRead("obr.config")
 i = 0
 While "True"
   Parametros[i] = EV3File.ReadLine(Handle)
